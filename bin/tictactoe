@@ -6,25 +6,24 @@ require_relative "../lib/players/human.rb"
 require_relative "../lib/player.rb"
 
 puts "Welcome to Tic-tac-toe!"
-puts "Do you want to play against a human, against an AI, or watch an AI match?"
+puts "Do you want to play against a human, against an AI, or watch an AI match? Type 'human', 'AI', or 'AI match'."
 game_players = gets.strip
-puts "If a human vs. AI match, who should go first? The first player is assigned 'X'. Type 'human' or 'AI'. Else, type 'human match' or 'AI match'."
-player1 = gets.strip
-if player1 == "human"
+if game_players == "AI"
+  puts "If a human vs. AI match, who should go first? Type 'human' or 'AI'."
+  player1 = gets.strip
+  if player1 == "human"
+    p1 = Players::Human.new("X")
+    p2 = Players::Computer.new("0")
+  elsif player1 == "AI"
+    p1 = Players::Computer.new("X")
+    p2 = Players::Human.new("0")
+  end
+elsif game_players == "human"
   p1 = Players::Human.new("X")
-  p2 = Players::Computer.new("0")
-elsif player1 == "AI"
-  p1 = Players::Computer.new("X")
   p2 = Players::Human.new("0")
-elsif player1 == "human match"
-  p1 = Players::Human.new("X")
-  p2 = Players::Human.new("0")
-elsif player1 == "AI match"
+elsif game_players == "AI match"
   p1 = Players::Computer.new("X")
   p2 = Players::Computer.new("0")
-#else
-#  puts "I'm sorry; please type again"
-#  player1 = gets.strip
 end
 game = Game.new(p1, p2, b)
 game.play
