@@ -29,10 +29,11 @@ end
 game = Game.new(p1, p2, b)
 game.play
 when game.over? == true
-  puts "Do you want to play again? Yes/no"
+  puts "Do you want to play again? Y/N"
   answer = gets.strip
-  if answer == "yes" || "Yes"
-
+  if answer == "Y"
+  elsif answer == "N"
+    puts "Thanks for playing!"
   end
 
 Use the input to correctly initialize a Game with the appropriate player types and token values.
