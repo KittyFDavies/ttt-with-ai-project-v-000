@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
-require_relative "../lib/players/computer.rb"
-require_relative "../lib/players/human.rb"
-require_relative "../lib/player.rb"
+#require_relative "../lib/players/computer.rb"
+#require_relative "../lib/players/human.rb"
+#require_relative "../lib/player.rb"
 
 puts "Welcome to Tic-tac-toe!"
 puts "Do you want to play against a human, against an AI, or watch an AI match? Type 'human', 'AI', or 'AI match'."
@@ -27,7 +27,7 @@ elsif game_players == "AI match"
 end
 game = Game.new(p1, p2, b)
 game.play
-when game.over? == true
+while game.over? == false
   puts "Do you want to play again? Y/N"
   answer = gets.strip
   if answer == "Y"
