@@ -31,6 +31,9 @@ game.play
 when game.over? == true
   puts "Do you want to play again? Yes/no"
   answer = gets.strip
+  if answer == "yes" || "Yes"
+
+  end
 
 Use the input to correctly initialize a Game with the appropriate player types and token values.
 When the game is over, the CLI should prompt the user if they would like to play again and
