@@ -13,7 +13,7 @@ player1 = gets.strip
 if player1 == "human"
   p1 = Players::Human.new("X")
   p2 = Players::Computer.new("0")
-elsif player1 == "AI" 
+elsif player1 == "AI"
   p1 = Players::Computer.new("X")
   p2 = Players::Human.new("0")
 elsif player1 == "human match"
@@ -22,6 +22,9 @@ elsif player1 == "human match"
 elsif player1 == "AI match"
   p1 = Players::Computer.new("X")
   p2 = Players::Computer.new("0")
+else
+  puts "I'm sorry; please type again"
+  gets.strip
 end
 game = Game.new()
 Use the input to correctly initialize a Game with the appropriate player types and token values.
