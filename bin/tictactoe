@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
-#require_relative "../lib/players/computer.rb"
-#require_relative "../lib/players/human.rb"
-#require_relative "../lib/player.rb"
+require_relative "../lib/players/computer.rb"
+require_relative "../lib/players/human.rb"
+require_relative "../lib/player.rb"
 
 puts "Welcome to Tic-tac-toe!"
 puts "Do you want to play against a human, against an AI, or watch an AI match?"
