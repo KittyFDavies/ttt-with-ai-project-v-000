@@ -4,3 +4,27 @@ require_relative '../config/environment'
 #require_relative "../lib/players/computer.rb"
 #require_relative "../lib/players/human.rb"
 #require_relative "../lib/player.rb"
+
+puts "Welcome to Tic-tac-toe!"
+puts "Do you want to play against a human, against an AI, or watch an AI match?"
+game_players = gets.strip
+puts "If a human vs. AI match, who should go first? The first player is assigned 'X'. Type 'human' or 'AI'. Else, type 'human match' or 'AI match'."
+player1 = gets.strip
+if player1 == "human"
+  p1 = Players::Human.new("X")
+  p2 = Players::Computer.new("0")
+elsif player1 == "AI" 
+  p1 = Players::Computer.new("X")
+  p2 = Players::Human.new("0")
+elsif player1 == "human match"
+  p1 = Players::Human.new("X")
+  p2 = Players::Human.new("0")
+elsif player1 == "AI match"
+  p1 = Players::Computer.new("X")
+  p2 = Players::Computer.new("0")
+end
+game = Game.new()
+Use the input to correctly initialize a Game with the appropriate player types and token values.
+When the game is over, the CLI should prompt the user if they would like to play again and
+allow them to choose a new configuration for the game as described above. If the user doesn't
+want to play again, exit the program.
